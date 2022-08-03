@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste DOM</h1>
+    <div class="container">
+        <p>teste 1</p>
+        <p>lorem <a href="#"> link </a>.</p>
+        <p>teste 2</p>
+
+        <h2>Lista</h2>
+        <ul>
+            <li>item 1</li>
+            <li>item2
+                <ul>
+                    <li>item2.a</li>
+                    <li>item2.b</li>
+                    <li>item2.c</li>
+                    <li>
+                        <!-- adasasdasd -->
+                    </li>
+                    
+                </ul>
+            </li>
+            <li>item <a href="#">link</a></li>
+        </ul>
+    </div>
+
+    <script>
+        console.log(document.body)
+        console.log(document.body.parentElement)
+        console.log(document.body.parentNode)
+
+        const html = document.body.parentElement
+
+        console.log(html.parentElement)
+        console.log(html.parentNode)
+
+        const h2 = document.querySelector('h2')
+        const h2NextSibling = h2.nextElementSibling
+        h2NextSibling.style.background = 'yellow'
+
+        console.log(h2.nextElementSibling)
+        console.log(h2.previousElementSibling)
+
+        const link = document.querySelector('a')
+        const list = document.querySelector('ul ul')
+
+        console.log(link)
+
+        console.log(link.parentElement.childNodes)
+        console.log(link.parentElement.children)
+
+        console.log(link.parentElement.firstChild)
+        console.log(link.parentElement.firstElementChild)
+
+        console.log(link.parentElement.lastChild)
+        console.log(link.parentElement.lastElementChild)
+
+        console.log(list.lastElementChild.hasChildNodes())
+        console.log(list.lastElementChild.childNodes[1].nodeType)
+
+        
+    </script>
+    
+</body>
+</html>

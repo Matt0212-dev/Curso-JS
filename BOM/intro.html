@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste BOM - Curso JS</h1>
+
+    <a href="history.html">Vai para history.html</a>
+
+    <button>abre com metodo open</button>
+
+    <hr>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cumque quos illo? Dignissimos nostrum ratione earum sint? Excepturi saepe ea quo, magnam iure ex voluptates quasi eaque, sapiente sunt tenetur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem optio, sint saepe rerum, corrupti at error magnam quod asperiores pariatur voluptas eligendi ea temporibus natus necessitatibus! Voluptas ullam consequuntur suscipit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cumque quos illo? Dignissimos nostrum ratione earum sint? Excepturi saepe ea quo, magnam iure ex voluptates quasi eaque, sapiente sunt tenetur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem optio, sint saepe rerum, corrupti at error magnam quod asperiores pariatur voluptas eligendi ea temporibus natus necessitatibus! Voluptas ullam consequuntur suscipit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem optio, sint saepe rerum, corrupti at error magnam quod asperiores pariatur voluptas eligendi ea temporibus natus necessitatibus! Voluptas ullam consequuntur suscipit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cumque quos illo? Dignissimos nostrum ratione earum sint? Excepturi saepe ea quo, magnam iure ex voluptates quasi eaque, sapiente sunt tenetur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem optio, sint saepe rerum, corrupti at error magnam quod asperiores pariatur voluptas eligendi ea temporibus natus necessitatibus! Voluptas ullam consequuntur suscipit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur cumque quos illo? Dignissimos nostrum ratione earum sint? Excepturi saepe ea quo, magnam iure ex voluptates quasi eaque, sapiente sunt tenetur.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem optio, sint saepe rerum, corrupti at error magnam quod asperiores pariatur voluptas eligendi ea temporibus natus necessitatibus! Voluptas ullam consequuntur suscipit.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem optio, sint saepe rerum, corrupti at error magnam quod asperiores pariatur voluptas eligendi ea temporibus natus necessitatibus! Voluptas ullam consequuntur suscipit.</p>
+
+    <script>
+        var teste = 'variavel de intro.js'
+
+        function teste2(){
+            console.log('teste2 chamado')
+        }
+
+        console.log(opener)
+
+        document.querySelector('button').addEventListener('click', function(){
+            window.open('history.html', 'nome-janela', 'width=600, height=300')
+        })
+
+        window.addEventListener('load', function(){
+            console.log('load') // quando TODA pagina carregar
+        })
+
+        window.addEventListener('DOMContentLoaded', function(){
+            console.log('DOMContentLoaded') // quando a estrutura do DOM estiver carregada
+        })
+
+        window.addEventListener('resize', function(){
+            console.log('resize', innerWidth, innerHeight)
+        })
+
+        window.addEventListener('scroll', function(){
+            console.log('scroll', pageYOffset)
+        })
+
+        window.addEventListener('unload', function(){
+            console.log('unload')
+        })
+
+        window.addEventListener('beforeunload', function(){
+            console.log('beforeunload')
+        })
+    </script>
+</body>
+</html>

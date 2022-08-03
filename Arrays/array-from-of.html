@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga amet ipsum natus exercitationem dolorum nobis molestias sunt commodi fugiat blanditiis, tempore labore, consequuntur aut totam qui quod velit quos quasi!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga amet ipsum natus exercitationem dolorum nobis molestias sunt commodi fugiat blanditiis, tempore labore, consequuntur aut totam qui quod velit quos quasi!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga amet ipsum natus exercitationem dolorum nobis molestias sunt commodi fugiat blanditiis, tempore labore, consequuntur aut totam qui quod velit quos quasi!</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga amet ipsum natus exercitationem dolorum nobis molestias sunt commodi fugiat blanditiis, tempore labore, consequuntur aut totam qui quod velit quos quasi!</p>
+
+    <script>
+        const arr1 = new Array(3)
+        console.log(arr1)
+        console.log(arr1.length)
+
+        const arr3 = Array.of(3)
+        console.log(arr3)
+        console.log(arr3.length)
+
+        const arr2 = Array.from(arr1)
+        arr2.push(4, 5)
+
+        let paragrafos = document.querySelectorAll('p')
+        console.log(paragrafos)
+
+        paragrafos.forEach(function(p, i){
+            p.textContent = `${++i} - ${p.textContent}`
+        })
+
+        //Transforma objeto em array
+        paragrafos = Array.from(paragrafos)
+
+        paragrafos.map(function(p, i){
+            p.textContent = `${++i} - ${p.textContent}`
+        })
+    </script>
+</body>
+</html>

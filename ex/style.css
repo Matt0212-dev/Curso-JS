@@ -1,0 +1,53 @@
+:root{
+    --main-color: #1e2a3a;    
+}
+
+body{
+    background: var(--main-color);
+    font: normal 15pt Arial;
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+}
+
+footer{
+    color:white;
+    text-align: center;
+    font-style: italic;
+}
+
+#fnum{
+    padding: 10px;
+}
+
+#flista{ 
+    width: 100%;    
+}
+
+.btn{
+    color: white;
+    font-weight: bold;
+    background-color: var(--main-color);
+    border: 2px solid var(--main-color);
+    border-radius:  5px;
+    padding: 10px;
+    font-size: 15px; 
+    cursor: pointer;    
+}
+
+.btn:hover{
+    background-color: transparent;
+    color: var(--main-color);
+    transition: .5s;
+}

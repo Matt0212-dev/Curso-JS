@@ -1,0 +1,103 @@
+:root{
+    --main-bg-color: #111821;
+    --text-color: #54b689;  
+    --border-color: #999;
+    --button-bg-color: #1e2a3a;   
+}
+
+body{
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kanit';    
+}
+main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;  
+  }
+  
+.container{
+    display: flex;
+    flex-direction: column;
+    background: var(--main-bg-color);
+    width: 400px;
+    height: 600px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 50px;
+    color: var(--text-color);
+    font: bold 2.5rem 'Kanit';
+    border-bottom: solid 2px var(--border-color);
+    margin-bottom: 20px;
+}
+
+.input {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+}
+.input input {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border:none;
+    outline: 0;
+    font: bold 1.5rem 'Kanit';
+    text-align: center;
+    color: var(--main-bg-color);
+}
+
+.input label {
+    font: bold 1.5rem 'Kanit';
+}
+
+button{
+    width: 300px;
+    height: 40px;
+    font: bold 1.3rem 'Kanit';
+    background: var(--button-bg-color);
+    color: var(--text-color);
+    transition: 0.6s;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+   
+}
+button:hover{
+    background: transparent;   
+    border: 1px solid var(--text-color);
+}
+
+.result{
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    width: 300px;
+    height: 150px;
+    border-radius: 10px;
+    border: none;
+    font: italic 1.3rem 'Kanit';
+    /* box-shadow: 0px 0px 10px black; */
+    background: var(--button-bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    box-sizing: border-box;
+    user-select: none;
+}
