@@ -1,3 +1,38 @@
+//Factories
+const CachorroProto = {
+    latir(){
+        console.log(`${this.name} está latindo`)
+    },
+    andar(distancia){
+        this.posicao += distancia
+        console.log(this.name, 'andou ', distancia, 'm')
+    },
+}
+
+function criarCachorro(name){
+    let posicao = 0
+
+    const obj = {
+        name,       
+        get posicao(){
+            console.log(`a posicao atual de ${this.name} é ${posicao}`)
+            return posicao
+        } ,
+        
+        set posicao(newPosition){            
+            posicao = newPosition
+            console.log(`a nova posicao de ${this.name} é ${newPosition}`)
+        }
+    }
+    Object.setPrototypeOf(obj, CachorroProto)   
+
+    return obj    
+}
+
+
+let dog1 = criarCachorro('dog1')
+let dog2 = criarCachorro('dog2')
+
 //ES5
 function Animal(tipo){    
     if(this instanceof Animal){
@@ -22,8 +57,15 @@ function Dog(nome){
     this.nome = nome
     Animal.call(this, 'Mamifero')
     // this.constructor = Dog
+    this.comer = function(){
+        console.log(`${this.nome} está comendo`)
+    }
 }
-Dog.prototype = new Animal('Mamifero')
+
+Dog.prototype = new Animal()
+Dog.prototype.latir = function(){
+    console.log(`${this.nome} está latindo`)
+}
 Dog.prototype.constructor = Dog
 
 let dog = new Dog('Cachorro')
@@ -41,6 +83,7 @@ class AnimalC{
             this.tipo = tipo
         }
         
+        
     }
     obterTipo(){
         return this.tipo
@@ -53,6 +96,9 @@ class GatoC extends AnimalC{
     constructor(nome){
         super('mamifero')
         this.nome = nome
+        this.comer = function(){
+            console.log(`${this.nome} está comendo`)
+        }
     }
 }
 
