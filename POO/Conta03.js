@@ -1,13 +1,15 @@
 /* 
-2. Criar duas classes que herdam de ContaBancaria
-- ContaCorrente
-    - limite
-    - sacar(valor)
-    
-- ContaPoupanca
-    - aniversario
-    - sacar(valor)
+3. criar classe Cliente e compor as classes concretas
+    - nome
+    - documento
 */
+
+class Cliente{
+    constructor(nome, documento){
+        this.nome = nome
+        this.documento = documento
+    }
+}
 
 class ContaBancaria{
 
@@ -54,9 +56,13 @@ class ContaPoupanca extends ContaBancaria{
     }
 }
 
-const cp1 = new ContaPoupanca('mateus', 1)
-const cp2 = new ContaPoupanca('joao', 2)
-const cc1 = new ContaCorrente('maria', 3)
+const mateus = new Cliente('mateus', 1)
+const joao = new Cliente('joao', 2)
+const maria = new Cliente('maria', 3)
+
+const cp1 = new ContaPoupanca(mateus, 1)
+const cp2 = new ContaPoupanca(joao, 2)
+const cc1 = new ContaCorrente(maria, 3)
 
 cp1.depositar(1000)
 console.log(cp1)
