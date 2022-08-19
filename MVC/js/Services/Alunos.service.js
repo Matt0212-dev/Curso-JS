@@ -11,7 +11,11 @@ class AlunosService{
         this.updateLocalStorage()
     }
     edit(aluno){
-        return aluno
+        aluno.generateAvarege()
+        this.updateLocalStorage()
+    }
+    search(name){
+        return this.alunos.filter(aluno => aluno.nome.indexOf(name) >= 0)
     }
     searchById(id){
         return this.alunos.find(aluno => aluno._id === id)

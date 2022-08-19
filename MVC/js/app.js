@@ -41,3 +41,23 @@ document.querySelector('form').addEventListener('submit', function(e){
    
     alunosController.add({nome})
 })
+
+document.querySelector('#search_name').addEventListener('input', function(){
+    const name = this.value
+    sessionStorage.setItem('search', name)
+
+    if(name.length > 2 || name.length === 0){
+        alunosController.search(name)
+    } 
+})
+
+const inputEvent = new Event('input')
+const inputEventIE = document.createElement('event')
+inputEventIE.initEvent('input', true, true)
+
+if(sessionStorage.getItem('serach')){
+    document.querySelector('#search_name').value = sessionStorage.getItem('search')
+    // document.querySelector('#search_name').dispatchEvent(inputEvent)
+    document.querySelector('#search_name').dispatchEvent(inputEventIE)
+
+}
