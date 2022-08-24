@@ -2,6 +2,7 @@ export function createXMLHttpRequest(method, url, cb, data = null){
     const xhr = new XMLHttpRequest()
 
     xhr.open(method, url)
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     xhr.send(data)
 
     xhr.onreadystatechange = verificaAjax
@@ -13,8 +14,8 @@ export function createXMLHttpRequest(method, url, cb, data = null){
         // console.log(xhr.responseText)
 
         if(xhr.readyState === 4){
-            if(xhr.status === 200 || xhr.status === 304) {
-                // console.log(typeof xhr.responseText)
+            // if(xhr.status === 200 || xhr.status === 304) {
+            if(xhr.status < 400) {
                 const json = JSON.parse(xhr.responseText)
                 
                 if (typeof cb === 'function'){
