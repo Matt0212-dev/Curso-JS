@@ -63,6 +63,6 @@ export default class TasksView{
         tasks.forEach(taskObj => {
             this.container.appendChild(generateLiTask(taskObj))
         });
-        console.log('aqui o render deve ser executado')
+        // console.log('aqui o render deve ser executado')
     }
 }

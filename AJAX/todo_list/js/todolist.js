@@ -31,7 +31,6 @@ todoAddForm.addEventListener("submit", function (e) {
 
 function clickedUl(e) {
     const dataAction = e.target.getAttribute("data-action")
-    console.log(e.target)
     if (!dataAction) return
 
     let currentLi = e.target
@@ -51,16 +50,12 @@ function clickedUl(e) {
             editContainer.style.display = "flex";
         },
         deleteButton: function () {
-            // arrInstancesTasks.splice(currentLiIndex, 1)
-            // renderTasks()
             taskController.remove(currentLi.getAttribute('data-id'))
 
         },
         containerEditButton: function () {
             const title = currentLi.querySelector(".editInput").value
             const id = currentLi.getAttribute('data-id')
-            // arrInstancesTasks[currentLiIndex].setName(val)
-            // renderTasks()
             taskController.update({title, id})
         },
         containerCancelButton: function () {
@@ -68,10 +63,6 @@ function clickedUl(e) {
             currentLi.querySelector(".editInput").value = arrInstancesTasks[currentLiIndex].title
         },
         checkButton: function () {
-
-            // DEVE USAR O MÉTODO toggleDone do objeto correto
-            // arrInstancesTasks[currentLiIndex].toggleDone()
-            // renderTasks()
             const id = currentLi.getAttribute('data-id')
             taskController.toggleDone(id)
         }
@@ -83,3 +74,29 @@ function clickedUl(e) {
 }
 
 ul.addEventListener("click", clickedUl)
+
+//codigos de exemplo
+
+fetch ('http://localhost:3000/users/')
+    .then(resposta => resposta.json())
+    .then(resposta => {console.log(resposta); console.log('finally')})
+    .catch(err => {console.log(err); console.log('finally')})
+    // .finally(() => console.log('finally'))
+
+
+// colocar ';' antes de função auto invocavel
+;(async function(){
+    let users = []
+
+    try{
+        await fetch('http://localhost:3020/users/')
+            .then(resposta => resposta.json())
+            .then(_users => {
+                console.log(_users)
+                users = _users
+            })
+    }catch(e){
+        console.log(e.message)
+    }
+    console.log(users)
+})()
