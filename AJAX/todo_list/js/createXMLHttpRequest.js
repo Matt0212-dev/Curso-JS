@@ -1,4 +1,4 @@
-export function createXMLHttpRequest(method, url, cb, data = null){
+export function createXMLHttpRequest(method, url, success, error, data = null){
     const xhr = new XMLHttpRequest()
 
     xhr.open(method, url)
@@ -8,25 +8,16 @@ export function createXMLHttpRequest(method, url, cb, data = null){
     xhr.onreadystatechange = verificaAjax
 
     function verificaAjax(){
-        // console.log(xhr.readyState)
-        // console.log(xhr.status)
-        // console.log(xhr.response)
-        // console.log(xhr.responseText)
-
         if(xhr.readyState === 4){
             // if(xhr.status === 200 || xhr.status === 304) {
             if(xhr.status < 400) {
                 const json = JSON.parse(xhr.responseText)
                 
-                if (typeof cb === 'function'){
-                    cb(json)
+                if (typeof success === 'function'){
+                    success(json)
                 }               
-            }else if(typeof cb === 'function'){
-                cb({
-                    error: true,
-                    status: xhr.status,
-                    message: "algo deu errado com a conexão",
-                })
+            }else if(typeof error === 'function'){
+                error("algo deu errado com a conexão")
             }
         }
     }

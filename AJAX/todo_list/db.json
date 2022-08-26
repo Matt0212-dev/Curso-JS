@@ -4,81 +4,17 @@
       "title": "primeira tarefa",
       "completed": false,
       "createAt": "",
-      "updatedAt": "",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "title": "segunda tarefa",
-      "completed": false,
-      "createAt": "",
-      "updatedAt": "",
+      "updatedAt": 1661471824364,
       "userId": 2,
       "id": 2
     },
     {
-      "title": "terceira tarefa",
+      "title": "segunda tarefa",
       "completed": false,
-      "createAt": "",
-      "updatedAt": "",
-      "userId": 3,
-      "id": 3
-    },
-    {
-      "userId": 3,
-      "title": "tarefa do João",
-      "id": 4
-    },
-    {
-      "title": "teste",
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "title": "task 2",
-      "userId": 2,
-      "id": 6
-    },
-    {
-      "title": "aaa",
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "title": "qualquer coisa",
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "title": "qualquer coisa 2",
-      "userId": 2,
-      "id": 9
-    },
-    {
-      "title": "00000000",
-      "userId": 2,
-      "id": 10
-    },
-    {
-      "title": "caralho",
-      "userId": 2,
-      "id": 11
-    },
-    {
-      "title": "novo teste",
-      "completed": false,
-      "createdAt": 1661365455337,
-      "updatedAt": null,
-      "userId": "2",
-      "id": 12
-    },
-    {
-      "title": "teste após view",
-      "completed": false,
-      "createdAt": 1661366822988,
-      "updatedAt": null,
-      "userId": "2",
-      "id": 13
+      "createdAt": 1661471969055,
+      "updatedAt": 1661471971124,
+      "id": 3,
+      "userId": "2"
     }
   ],
   "users": [

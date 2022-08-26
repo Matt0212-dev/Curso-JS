@@ -1,33 +1,54 @@
-const urlUsers = "http://localhost:3000/users"
 import { createXMLHttpRequest } from "../createXMLHttpRequest.js"
 import { Task } from "../Model/Task.model.js"
-
+import { urlUsers, urlTasks } from "../config.js"  
 export default class TasksService{
     constructor(){
         this.tasks = []
     }
-    add(task, cb, userId){
-        if(!task instanceof Task){
-            throw TypeError('task must be instanceof TaskModel')
-        }
 
+    add(task, cb, error, userId){
         const fn = (_task) => {
             const {title, completed, createdAt, updatedAt} = _task//Extrai as propriedades
-            this.tasks.push(new Task(title, completed, createdAt, updatedAt))  
-            if(typeof cb === "function") cb() 
+
+            this.getTasks(userId, cb)
         }
-        createXMLHttpRequest("POST", `${urlUsers}/${userId}/tasks`, fn, JSON.stringify(task))
+        createXMLHttpRequest("POST", `${urlUsers}/${userId}/tasks`, fn, error, JSON.stringify(task))
+    }
+
+    // "GET", `${urlUsers}/${userId}/tasks`, init
+    getTasks(userId, success, error){
+        const fn = (arrTasks) => {
+            if(arrTasks.error){
+                return alert(arrTasks.message)
+            }
+            this.tasks = arrTasks.map(task => {
+                const { title, completed, createdAt, updatedAt, id } = task 
+                return new Task(title, completed, createdAt, updatedAt, id)
+            })
+
+            if(typeof success === "function") success(this.tasks) 
+        }
+        createXMLHttpRequest("GET", `${urlUsers}/${userId}/tasks`, fn, error)
+    }
+
+    remove(id, cb, error, userId){
+        const fn = () => { 
+            this.getTasks(userId, cb)         
+        }
+
+        createXMLHttpRequest("DELETE", `${urlTasks}/${id}`, fn, error)
         
     }
-    // "GET", `${urlUsers}/${userId}/tasks`, init
-    getTasks(userId, cb){
-        const fn = (arrTasks) => {
-            this.tasks = arrTasks.map(task => {
-                const { title, completed, createdAt, updatedAt } = task 
-                return new Task(title, completed, createdAt, updatedAt)
-            })
-            cb(this.tasks)
+
+    update(task, cb, error, userId){
+        task.updatedAt = Date.now()
+        const fn = () => { 
+            this.getTasks(userId, cb)         
         }
-        createXMLHttpRequest("GET", `${urlUsers}/${userId}/tasks`, fn)
+        createXMLHttpRequest("PATCH", `${urlTasks}/${task.id}`, fn, error, JSON.stringify(task))
+    }
+
+    getById(id){
+        return this.tasks.find(task => parseInt(task.id) === id)
     }
 }
