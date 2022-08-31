@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match_Search</title>
+</head>
+<body>
+
+    <script>
+        let str = 'hoje é 30/08/2022 e amanhã será 31/08/22. Meu aniversario é 2/12'       
+        const meses = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+
+        const regex = /(\d{1,2})\//
+        const regexGlobal = /(\d{1,2})\//g
+
+        console.log(str.search(regex))
+        console.log(str.search(regexGlobal))
+
+        console.log(`======================`)
+
+        console.log(str.match(regex))
+        console.log(str.match(regexGlobal))
+        
+    </script>
+
+</body>
+</html>
